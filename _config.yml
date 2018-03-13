@@ -1,7 +1,7 @@
 title: Shortform content prototype
 email: david.morris@bbc.co.uk
 description: N/A
-baseurl: "/shortform-content" # the subpath of your site, e.g. /blog
+baseurl: "/shortform-prototype" # the subpath of your site, e.g. /blog
 # host: 0.0.0.0
 
 
