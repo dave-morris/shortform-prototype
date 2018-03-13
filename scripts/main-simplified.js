@@ -6,6 +6,11 @@ $(document).ready(function() {
 
     goTo = "Not defined";
 
+    //pause all videos from playing to begin with
+    $('.vid').each(function() {
+      $(this).pause();
+    });
+
     // // For the horizontal adjustment of carousels
     function adjustContent() {
 
@@ -348,9 +353,10 @@ $(document).ready(function() {
 
           if ($('.carousel').hasClass('active') && $('.content-wrapper:first-child').hasClass('focus')) {
 
+              var vid = $('.active').attr("data-id");
+
               //get the data-id of the current slice
               goTo = $('.active').attr("data-id");
-              console.log(goTo);
 
               //replace the focus with a 'back to this' focus state
               $('.content-wrapper.focus').addClass('lastfocus').removeClass('focus');
