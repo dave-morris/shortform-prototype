@@ -267,6 +267,12 @@
   margin-bottom: 2px;
 }
 
+.content-title.multiple-line {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .content-wrapper.poster .content-subtitle {
   opacity: 0;
 }
@@ -725,6 +731,13 @@
 
 .content-wrapper.app-footer.focus {
   background-color: #EB4997;
+}
+
+.content-wrapper.focus .content-title.multiple-line {
+    text-overflow: inherit;
+    white-space: normal;
+    overflow: auto;
+  }
 }
 
 .content-wrapper.app-footer.focus .content-title {
