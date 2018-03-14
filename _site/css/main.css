@@ -76,6 +76,20 @@
     height: 132px;
 }
 
+.play {
+    height: 44px;
+    width: 44px;
+    background-color: #B2B7C4;
+    background-image: url("../img/play-icon.png");
+    position: absolute;
+    left: 64px;
+    top: 550px;
+}
+
+.play.focus {
+  background-color: #EB4997;
+}
+
 .content-wrapper.poster .content-grad {
     border-top: none;
 }

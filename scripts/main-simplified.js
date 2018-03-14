@@ -6,10 +6,15 @@ $(document).ready(function() {
 
     goTo = "Not defined";
 
-    //pause all videos from playing to begin with
-    $('.vid').each(function() {
-      $(this).pause();
-    });
+    function stopVideo() {
+    //pause all videos from playing and set to 0
+      $('#things-not-to-say').get(0).pause();
+      $('#things-not-to-say').get(0).currentTime = 0;
+      $('#must-see-telly').get(0).pause();
+      $('#must-see-telly').get(0).currentTime = 0;
+      $('#proto-comedy').get(0).pause();
+      $('#proto-comedy').get(0).currentTime = 0;
+    }
 
     // // For the horizontal adjustment of carousels
     function adjustContent() {
@@ -353,25 +358,53 @@ $(document).ready(function() {
 
           if ($('.carousel').hasClass('active') && $('.content-wrapper:first-child').hasClass('focus')) {
 
-              var vid = $('.active').attr("data-id");
-
               //get the data-id of the current slice
               goTo = $('.active').attr("data-id");
 
-              //replace the focus with a 'back to this' focus state
-              $('.content-wrapper.focus').addClass('lastfocus').removeClass('focus');
+              if (($('.active').attr('data-id') == "things-not-to-say") || ($('.active').attr('data-id') == "must-see-telly") || ($('.active').attr('data-id') == "proto-comedy")) {
 
-              //replace the active section with a 'back to this' state
-              $('.active').addClass('lastActive').removeClass('active');
+                setTimeout(function(){
 
-              //hide the display of the current container
-              $('.container.homepage').hide();
-              //
-              //using the data id: display the correct container
-              $('.container.player[data-id=' + goTo + ']').show();
-              //
-              //give focus to something (so you can later go back)
+                //replace the focus and slice with a 'back to this'  state
+                $('.active').addClass('lastActive').removeClass('active');
+                $('.content-wrapper.focus').addClass('lastfocus').removeClass('focus');
 
+                //hide the display of the current container and display the correct container
+                $('.container.homepage').hide();
+                $('.container.player[data-id=' + goTo + ']').show();
+
+                //find the correct video to play
+                $('#' + goTo + '').get(0).play();
+
+                //give focus to something (so you can later go back)
+                $('.container.player[data-id=' + goTo + '] .play').addClass('focus');
+
+                }, 10);
+
+              } else {
+
+                //do nothing
+
+              }
+
+          }
+
+          if ($('.play').hasClass('focus')) {
+
+            var video = $('.focus').parent().attr("data-id");
+            var videoPlayer = document.getElementById(video);
+
+            if (videoPlayer.paused == false) {
+
+              videoPlayer.pause();
+              $('.play.focus').css("background-image", "url(../shortform-prototype/img/pause-icon.png)");
+
+            } else {
+
+              videoPlayer.play();
+              $('.play.focus').css("background-image", "url(../shortform-prototype/img/play-icon.png)");
+
+            }
 
           }
 
@@ -395,7 +428,6 @@ $(document).ready(function() {
               $('.container.homepage').show();
               $('.primary-navigation').show();
 
-
               //find the lastActive div and make active
               $('.container.homepage').children().find('.lastActive').removeClass('lastActive').addClass('active');
 
@@ -408,8 +440,29 @@ $(document).ready(function() {
 
         function goBack() {
 
-
           adjustContent();
+
+          if ($('.play').hasClass('focus')) {
+
+            //stop all videos for safe measure
+            stopVideo();
+
+            //remove focus from the play button
+            $('.play').removeClass('focus')
+
+            //hide the current playing screen
+            $('.container.player').hide();
+
+            //show the homepage
+            $('.container.homepage').show();
+
+            //return active state to lastActive
+            $('.container-inner .lastActive').addClass('active').removeClass('lastActive');
+
+            //give focus to the relevant content item
+            $('.active .content-wrapper.lastfocus').addClass('focus').removeClass('lastfocus');
+
+          } else {
 
           //remove the class of focus from the content item
           $('.active .content-wrapper.focus').removeClass('focus');
@@ -451,6 +504,8 @@ $(document).ready(function() {
           }
 
         }
+
+      }
 
 
 
@@ -505,8 +560,6 @@ $(document).ready(function() {
 
               //if the grid is the only thing in the view (Not a A-Z to Cat page)
               if (total == 1) {
-
-                //Do nothing (This is for A-Z and Category pages where we don't want to move around the screen)
 
               //if the grid has another slice above or below it (ie. A back to home button)
               } else if (total > 1) {

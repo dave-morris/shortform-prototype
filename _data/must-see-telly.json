@@ -1,15 +1,15 @@
 [{
 	"title": "This Country",
-	"subtitle": "Kurtan on Tinder",
+	"subtitle": "",
 	"editorial_subtitle": "",
 	"synopses": {
-		"small": "It's all about the size of your radius"
+		"small": "Kurtan on Tinder. It's all about the size of your radius."
 	},
 	"images": {
 		"standard": "/img/must-see-telly/p05z535t.jpg"
 	},
 	"labels": {
-		"category": "Shortform",
+		"category": "Clip",
 		"editorial": "Label"
 	},
 	"versions": {
@@ -17,16 +17,16 @@
 	}
 }, {
 	"title": "Top Gear",
-	"subtitle": "Wild West chase",
+	"subtitle": "",
 	"editorial_subtitle": "",
 	"synopses": {
-		"small": "Matt, Chris and Rory are pursued by the cops in Utah"
+		"small": "Wild West Chase. Matt, Chris and Rory are pursued by the cops in Utah."
 	},
 	"images": {
 		"standard": "/img/must-see-telly/p05z5c0f.jpg"
 	},
 	"labels": {
-		"category": "Shortform",
+		"category": "Clip",
 		"editorial": "Label"
 	},
 	"versions": {
@@ -34,16 +34,16 @@
 	}
 }, {
 	"title": "Strike",
-	"subtitle": "Detective turned suspect",
+	"subtitle": "",
 	"editorial_subtitle": "",
 	"synopses": {
-		"small": "Strike needs to prove he isn't a murderer"
+		"small": "Detective turned suspect - Strike needs to prove he isn't a murderer."
 	},
 	"images": {
 		"standard": "/img/must-see-telly/p05z429x.jpg"
 	},
 	"labels": {
-		"category": "Shortform",
+		"category": "Clip",
 		"editorial": "Label"
 	},
 	"versions": {
@@ -51,16 +51,16 @@
 	}
 }, {
 	"title": "Civilisations",
-	"subtitle": "Petra: Heaven on earth",
+	"subtitle": "",
 	"editorial_subtitle": "",
 	"synopses": {
-		"small": "An amazing city in the desert"
+		"small": "Petra: Heaven on earth. An amazing city in the desert."
 	},
 	"images": {
 		"standard": "/img/must-see-telly/p05zn8tz.jpg"
 	},
 	"labels": {
-		"category": "Shortform",
+		"category": "Clip",
 		"editorial": "Label"
 	},
 	"versions": {
@@ -68,16 +68,16 @@
 	}
 }, {
 	"title": "The Assassination of Gianni Versace",
-	"subtitle": "Have we met before?",
+	"subtitle": "",
 	"editorial_subtitle": "",
 	"synopses": {
-		"small": "Charm and ruthless ambition - the start of a deadly chain of events"
+		"small": "Charm and ruthless ambition - the start of a deadly chain of events."
 	},
 	"images": {
 		"standard": "/img/must-see-telly/p05z3zt9.jpg"
 	},
 	"labels": {
-		"category": "Shortform",
+		"category": "Clip",
 		"editorial": "Label"
 	},
 	"versions": {
