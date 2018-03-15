@@ -528,8 +528,7 @@ $(document).ready(function() {
 
           } else if ($('.primary-navigation.active').children().hasClass('focus')) {
 
-             window.history.back();
-             console.log('Going backwards')
+            //Do the default action (Take me out of the app)
 
           } else {
 
@@ -579,7 +578,7 @@ $(document).ready(function() {
 
 
     // On *any* keydown event
-    $(document).keydown(function(e) {
+    $(document).keyup(function(e) {
 
       e.preventDefault();
 
