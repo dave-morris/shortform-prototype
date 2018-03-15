@@ -526,6 +526,11 @@ $(document).ready(function() {
             //give focus to the relevant content item
             $('.active .content-wrapper.lastfocus').addClass('focus').removeClass('lastfocus');
 
+          } else if ($('.primary-navigation.active').children().hasClass('focus')) {
+
+             window.history.back();
+             console.log('Going backwards')
+
           } else {
 
           //remove the class of focus from the content item
@@ -539,7 +544,7 @@ $(document).ready(function() {
             //reset the translateX position of the carousel
             $('.active .carousel-content').css('transform', 'translateX(0px)');
 
-          } else {
+            } else {
 
             //reset view to top of page
             $('.container-inner').css('transform', 'translateY(0px)');
