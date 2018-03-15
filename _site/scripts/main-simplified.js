@@ -19,16 +19,16 @@ $(document).ready(function() {
     function showControls() {
 
       //hide controls after 5 seconds
-      $('.play').fadeIn(0);
-      $('.video-overlay').fadeIn(0);
+      $('.play').stop( true, true ).fadeIn(0);
+      $('.video-overlay').stop( true, true ).fadeIn(0);
 
     }
 
     function hideControls() {
 
       //hide controls after 5 seconds
-      $('.play').delay(5000).fadeOut(400);
-      $('.video-overlay').delay(5000).fadeOut(400);
+      $('.play').delay(6000).fadeOut(400);
+      $('.video-overlay').delay(6000).fadeOut(400);
 
     }
 
