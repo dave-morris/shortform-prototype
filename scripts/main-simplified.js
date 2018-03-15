@@ -963,10 +963,12 @@ $(document).ready(function() {
     });
 
     // On *any* keyup event
-    $(document).keyup(function(e) {
-
-      e.preventDefault();
-
-    });
+    // $(document).keyup(function(e) {
+    //
+    //
+    //
+    //   e.preventDefault();
+    //
+    // });
 
 });
