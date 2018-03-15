@@ -76,6 +76,14 @@
     height: 132px;
 }
 
+.player-controls {
+  width: 1280px;
+  height: 720px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .play {
     height: 44px;
     width: 44px;
@@ -84,6 +92,31 @@
     position: absolute;
     left: 64px;
     top: 550px;
+}
+
+.play-state {
+  width: 52px;
+  font-size: 18px;
+  text-align: center;
+  color: #EBEBEB;
+  position: absolute;
+  top: 604px;
+  left: 59px;
+}
+
+.scrub-bar {
+  width: 1152px;
+  height: 4px;
+  background-color: #282635;
+  position: absolute;
+  top: 519px;
+  left: 64px;
+  margin: 0;
+  padding: 0;
+}
+
+.scrub-bar-fill {
+
 }
 
 .play.focus {

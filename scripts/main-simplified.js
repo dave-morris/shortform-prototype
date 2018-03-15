@@ -19,7 +19,7 @@ $(document).ready(function() {
     function showControls() {
 
       //hide controls after 5 seconds
-      $('.play').stop( true, true ).fadeIn(0);
+      $('.player-controls').stop( true, true ).fadeIn(0);
       $('.video-overlay').stop( true, true ).fadeIn(0);
 
     }
@@ -27,7 +27,7 @@ $(document).ready(function() {
     function hideControls() {
 
       //hide controls after 5 seconds
-      $('.play').delay(6000).fadeOut(400);
+      $('.player-controls').delay(6000).fadeOut(400);
       $('.video-overlay').delay(6000).fadeOut(400);
 
     }
@@ -393,8 +393,8 @@ $(document).ready(function() {
                 $('#' + goTo + '').get(0).play();
 
                 //give focus to something (so you can later go back)
-                $('.container.player[data-id=' + goTo + '] .play').addClass('focus');
-                
+                $('.container.player[data-id=' + goTo + '] .player-controls .play').addClass('focus');
+
                 showControls()
                 hideControls()
 
@@ -410,19 +410,21 @@ $(document).ready(function() {
 
           if ($('.play').hasClass('focus')) {
 
-            var video = $('.focus').parent().attr("data-id");
+            var video = $('.focus').parent().parent().attr("data-id");
             var videoPlayer = document.getElementById(video);
 
             if (videoPlayer.paused == false) {
 
               videoPlayer.pause();
-              $('.play.focus').css("background-image", "url(../shortform-prototype/img/play-icon.png)");
+              $('.player-controls .play.focus').css("background-image", "url(../shortform-prototype/img/play-icon.png)");
+              $('.player-controls .play-state').text('Play');
               showControls();
 
             } else {
 
               videoPlayer.play();
               $('.play.focus').css("background-image", "url(../shortform-prototype/img/pause-icon.png)");
+              $('.play-state').text('Pause');
               hideControls();
 
             }
