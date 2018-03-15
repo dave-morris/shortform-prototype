@@ -394,7 +394,8 @@ $(document).ready(function() {
 
                 //give focus to something (so you can later go back)
                 $('.container.player[data-id=' + goTo + '] .play').addClass('focus');
-
+                
+                showControls()
                 hideControls()
 
                 }, 10);
