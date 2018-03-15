@@ -6,6 +6,17 @@ $(document).ready(function() {
 
     goTo = "Not defined";
 
+    function pad(number, length) {
+
+    var str = '' + number;
+    while (str.length < length) {
+        str = '0' + str;
+    }
+
+      return str;
+
+    }
+
     function stopVideo() {
     //pause all videos from playing and set to 0
       $('#things-not-to-say').get(0).pause();
@@ -18,6 +29,28 @@ $(document).ready(function() {
 
     function showControls() {
 
+      $('.player-controls .play.focus').css("background-image", "url(../shortform-prototype/img/play-icon.png)");
+      $('.player-controls .play-state').text('Play');
+
+      setInterval(function(){
+
+        var totalMinutes = parseInt($('#' + goTo + '').get(0).duration / 60, 10);
+        var totalSeconds = parseInt($('#' + goTo + '').get(0).duration % 60);
+
+        var totalMinutes = pad(totalMinutes, 2);
+        var totalSeconds = pad(totalSeconds, 2);
+
+        var currentMinutes = parseInt($('#' + goTo + '').get(0).currentTime / 60, 10);
+        var currentSeconds = parseInt($('#' + goTo + '').get(0).currentTime % 60);
+
+        var currentMinutes = pad(currentMinutes, 2);
+        var currentSeconds = pad(currentSeconds, 2);
+
+        $('.player-controls #currentTime').html(currentMinutes + ":" + currentSeconds);
+        $('.player-controls #totalTime').html(totalMinutes + ":" + totalSeconds);
+
+      }, 400)
+
       //hide controls after 5 seconds
       $('.player-controls').stop( true, true ).fadeIn(0);
       $('.video-overlay').stop( true, true ).fadeIn(0);
@@ -26,9 +59,14 @@ $(document).ready(function() {
 
     function hideControls() {
 
+      $('.play.focus').css("background-image", "url(../shortform-prototype/img/pause-icon.png)");
+      $('.play-state').text('Pause');
+
       //hide controls after 5 seconds
       $('.player-controls').delay(6000).fadeOut(400);
       $('.video-overlay').delay(6000).fadeOut(400);
+
+      clearInterval();
 
     }
 
@@ -416,15 +454,13 @@ $(document).ready(function() {
             if (videoPlayer.paused == false) {
 
               videoPlayer.pause();
-              $('.player-controls .play.focus').css("background-image", "url(../shortform-prototype/img/play-icon.png)");
-              $('.player-controls .play-state').text('Play');
+
               showControls();
 
             } else {
 
               videoPlayer.play();
-              $('.play.focus').css("background-image", "url(../shortform-prototype/img/pause-icon.png)");
-              $('.play-state').text('Pause');
+
               hideControls();
 
             }
