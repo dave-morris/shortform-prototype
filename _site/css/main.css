@@ -125,7 +125,9 @@
 }
 
 .scrub-bar-fill {
-
+  float: left;
+  background-color: #b2b7c4;
+  height: 100%;
 }
 
 .play.focus {

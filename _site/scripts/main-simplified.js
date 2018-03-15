@@ -34,12 +34,14 @@ $(document).ready(function() {
 
       setInterval(function(){
 
+        var totalTime = parseInt($('#' + goTo + '').get(0).duration);
         var totalMinutes = parseInt($('#' + goTo + '').get(0).duration / 60, 10);
         var totalSeconds = parseInt($('#' + goTo + '').get(0).duration % 60);
 
         var totalMinutes = pad(totalMinutes, 2);
         var totalSeconds = pad(totalSeconds, 2);
 
+        var currentTime = parseInt($('#' + goTo + '').get(0).currentTime);
         var currentMinutes = parseInt($('#' + goTo + '').get(0).currentTime / 60, 10);
         var currentSeconds = parseInt($('#' + goTo + '').get(0).currentTime % 60);
 
@@ -49,7 +51,10 @@ $(document).ready(function() {
         $('.player-controls #currentTime').html(currentMinutes + ":" + currentSeconds);
         $('.player-controls #totalTime').html(totalMinutes + ":" + totalSeconds);
 
-      }, 400)
+        var progress = (currentTime / totalTime) * 100;
+        $('.scrub-bar-fill').css('width', + progress + '%')
+
+      }, 100)
 
       //hide controls after 5 seconds
       $('.player-controls').stop( true, true ).fadeIn(0);
