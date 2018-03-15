@@ -397,12 +397,12 @@ $(document).ready(function() {
             if (videoPlayer.paused == false) {
 
               videoPlayer.pause();
-              $('.play.focus').css("background-image", "url(../shortform-prototype/img/pause-icon.png)");
+              $('.play.focus').css("background-image", "url(../shortform-prototype/img/play-icon.png)");
 
             } else {
 
               videoPlayer.play();
-              $('.play.focus').css("background-image", "url(../shortform-prototype/img/play-icon.png)");
+              $('.play.focus').css("background-image", "url(../shortform-prototype/img/pause-icon.png)");
 
             }
 
@@ -444,9 +444,6 @@ $(document).ready(function() {
 
           if ($('.play').hasClass('focus')) {
 
-            //stop all videos for safe measure
-            stopVideo();
-
             //remove focus from the play button
             $('.play').removeClass('focus')
 
@@ -455,6 +452,9 @@ $(document).ready(function() {
 
             //show the homepage
             $('.container.homepage').show();
+            
+            //stop all videos for safe measure
+            stopVideo();
 
             //return active state to lastActive
             $('.container-inner .lastActive').addClass('active').removeClass('lastActive');
