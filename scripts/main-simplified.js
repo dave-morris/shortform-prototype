@@ -16,6 +16,22 @@ $(document).ready(function() {
       $('#proto-comedy').get(0).currentTime = 0;
     }
 
+    function showControls() {
+
+      //hide controls after 5 seconds
+      $('.play').fadeIn(0);
+      $('.video-overlay').fadeIn(0);
+
+    }
+
+    function hideControls() {
+
+      //hide controls after 5 seconds
+      $('.play').delay(5000).fadeOut(400);
+      $('.video-overlay').delay(5000).fadeOut(400);
+
+    }
+
     // // For the horizontal adjustment of carousels
     function adjustContent() {
 
@@ -379,6 +395,8 @@ $(document).ready(function() {
                 //give focus to something (so you can later go back)
                 $('.container.player[data-id=' + goTo + '] .play').addClass('focus');
 
+                hideControls()
+
                 }, 10);
 
               } else {
@@ -398,11 +416,13 @@ $(document).ready(function() {
 
               videoPlayer.pause();
               $('.play.focus').css("background-image", "url(../shortform-prototype/img/play-icon.png)");
+              showControls();
 
             } else {
 
               videoPlayer.play();
               $('.play.focus').css("background-image", "url(../shortform-prototype/img/pause-icon.png)");
+              hideControls();
 
             }
 
@@ -452,7 +472,7 @@ $(document).ready(function() {
 
             //show the homepage
             $('.container.homepage').show();
-            
+
             //stop all videos for safe measure
             stopVideo();
 
