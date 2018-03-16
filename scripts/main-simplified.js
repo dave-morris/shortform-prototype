@@ -34,23 +34,29 @@ $(document).ready(function() {
 
       setInterval(function(){
 
+        //This figures out the total values of the video currently playing
         var totalTime = parseInt($('#' + goTo + '').get(0).duration);
         var totalMinutes = parseInt($('#' + goTo + '').get(0).duration / 60, 10);
         var totalSeconds = parseInt($('#' + goTo + '').get(0).duration % 60);
 
+        //Adding 0s to the front of single numbers
         var totalMinutes = pad(totalMinutes, 2);
         var totalSeconds = pad(totalSeconds, 2);
 
+        //This figures out the current values of the video currently playing
         var currentTime = parseInt($('#' + goTo + '').get(0).currentTime);
         var currentMinutes = parseInt($('#' + goTo + '').get(0).currentTime / 60, 10);
         var currentSeconds = parseInt($('#' + goTo + '').get(0).currentTime % 60);
 
+        //Adding 0s to the front of single numbers
         var currentMinutes = pad(currentMinutes, 2);
         var currentSeconds = pad(currentSeconds, 2);
 
+        //Updating the timecode in the UI to reflect what's currently playing in the video
         $('.player-controls #currentTime').html(currentMinutes + ":" + currentSeconds);
         $('.player-controls #totalTime').html(totalMinutes + ":" + totalSeconds);
 
+        //Make the scrub bar reflect where the video is up to
         var progress = (currentTime / totalTime) * 100;
         $('.scrub-bar-fill').css('width', + progress + '%')
 

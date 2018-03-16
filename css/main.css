@@ -365,6 +365,15 @@
   margin: 0;
 }
 
+.durationLabel {
+  color: #B2B7C4;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 18px;
+  margin: 0;
+  display: none;
+}
+
 .liveLabel {
   color: #10CCCA;
   display: inline;
@@ -779,6 +788,10 @@
   color: #EBEBEB;
 }
 
+.content-wrapper.focus .durationLabel {
+  display: block;
+}
+
 .watch-live.focus {
   background-color: #EB4997;
 }
@@ -799,7 +812,6 @@
     text-overflow: inherit;
     white-space: normal;
     overflow: auto;
-  }
 }
 
 .content-wrapper.app-footer.focus .content-title {
@@ -852,7 +864,7 @@
   100% { opacity: 0.1; }
 }
 
-@media
+/* @media
 (-webkit-min-device-pixel-ratio: 2),
 (min-resolution: 192dpi) {
 
@@ -860,4 +872,4 @@
     transform: scale(1);
   }
 
-}
+} */

@@ -9,11 +9,11 @@
 		"standard": "/img/must-see-telly/p05z535t.jpg"
 	},
 	"labels": {
-		"category": "Highlight",
+		"category": "Clip",
 		"editorial": "Label"
 	},
 	"versions": {
-		"duration": ""
+		"duration": "55 seconds"
 	}
 }, {
 	"title": "Top Gear",
@@ -26,11 +26,11 @@
 		"standard": "/img/must-see-telly/p05z5c0f.jpg"
 	},
 	"labels": {
-		"category": "Highlight",
+		"category": "Clip",
 		"editorial": "Label"
 	},
 	"versions": {
-		"duration": ""
+		"duration": "57 seconds"
 	}
 }, {
 	"title": "Strike",
@@ -43,11 +43,11 @@
 		"standard": "/img/must-see-telly/p05z429x.jpg"
 	},
 	"labels": {
-		"category": "Highlight",
+		"category": "Clip",
 		"editorial": "Label"
 	},
 	"versions": {
-		"duration": ""
+		"duration": "2 mins"
 	}
 }, {
 	"title": "Civilisations",
@@ -60,11 +60,11 @@
 		"standard": "/img/must-see-telly/p05zn8tz.jpg"
 	},
 	"labels": {
-		"category": "Highlight",
+		"category": "Clip",
 		"editorial": "Label"
 	},
 	"versions": {
-		"duration": ""
+		"duration": "5 mins"
 	}
 }, {
 	"title": "The Assassination of Gianni Versace",
@@ -77,10 +77,10 @@
 		"standard": "/img/must-see-telly/p05z3zt9.jpg"
 	},
 	"labels": {
-		"category": "Highlight",
+		"category": "Clip",
 		"editorial": "Label"
 	},
 	"versions": {
-		"duration": ""
+		"duration": "2 mins"
 	}
 }]
