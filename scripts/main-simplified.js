@@ -34,35 +34,29 @@ $(document).ready(function() {
 
       setInterval(function(){
 
-        //This figures out the total values of the video currently playing
-        var totalTime = parseInt($('#' + goTo + '').get(0).duration);
-        var totalMinutes = parseInt($('#' + goTo + '').get(0).duration / 60, 10);
-        var totalSeconds = parseInt($('#' + goTo + '').get(0).duration % 60);
+        //Get the total values of the video currently playing
+        var getTotalTime = parseInt($('#' + goTo + '').get(0).duration);
 
-        //Adding 0s to the front of single numbers
-        var totalMinutes = pad(totalMinutes, 2);
-        var totalSeconds = pad(totalSeconds, 2);
+        //Formatting minutes and seconds so it looks like a timer
+        var totalTime = (pad(parseInt(getTotalTime / 60, 10), 2) + ":" + pad(parseInt(getTotalTime % 60), 2));
 
-        //This figures out the current values of the video currently playing
-        var currentTime = parseInt($('#' + goTo + '').get(0).currentTime);
-        var currentMinutes = parseInt($('#' + goTo + '').get(0).currentTime / 60, 10);
-        var currentSeconds = parseInt($('#' + goTo + '').get(0).currentTime % 60);
+        //Get the current values of the video currently playing
+        var getCurrentTime = parseInt($('#' + goTo + '').get(0).currentTime);
 
-        //Adding 0s to the front of single numbers
-        var currentMinutes = pad(currentMinutes, 2);
-        var currentSeconds = pad(currentSeconds, 2);
+        //Formatting minutes and seconds so it looks like a timer
+        var currentTime = pad(parseInt(getCurrentTime / 60, 10), 2) + ":" + pad(parseInt(getCurrentTime % 60), 2);
 
         //Updating the timecode in the UI to reflect what's currently playing in the video
-        $('.player-controls #currentTime').html(currentMinutes + ":" + currentSeconds);
-        $('.player-controls #totalTime').html(totalMinutes + ":" + totalSeconds);
+        $('.player-controls #currentTime').html(currentTime);
+        $('.player-controls #totalTime').html(totalTime);
 
         //Make the scrub bar reflect where the video is up to
-        var progress = (currentTime / totalTime) * 100;
+        var progress = (getCurrentTime / getTotalTime) * 100;
         $('.scrub-bar-fill').css('width', + progress + '%')
 
-      }, 100)
+      }, 50)
 
-      //hide controls after 5 seconds
+      //Stops the build up of an animation queue
       $('.player-controls').stop( true, true ).fadeIn(0);
       $('.video-overlay').stop( true, true ).fadeIn(0);
 
