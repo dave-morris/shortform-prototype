@@ -324,6 +324,31 @@ $(document).ready(function() {
 
         }
 
+        function pressPlay() {
+
+          if ($('.play').hasClass('focus')) {
+
+            var video = $('.focus').parent().parent().attr("data-id");
+            var videoPlayer = document.getElementById(video);
+
+            if (videoPlayer.paused == false) {
+
+              videoPlayer.pause();
+
+              showControls();
+
+            } else {
+
+              videoPlayer.play();
+
+              hideControls();
+
+            }
+
+          }
+
+        }
+
         function pressEnter() {
 
           // if ($('.primary-navigation').children().eq(1).hasClass('focus')) {
@@ -609,6 +634,12 @@ $(document).ready(function() {
       if (e.keyCode == 13) {
 
         pressEnter();
+
+      }
+
+      if (e.keyCode == 179) {
+
+        pressPlay();
 
       }
 
